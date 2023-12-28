@@ -44,7 +44,7 @@ public class PhishingExplorer {
             manejarExcepcion("Ocurrió un error leyendo el archivo.", e);
         }
 
- // Mostrar el total de puntos
+        // Mostrar el total de puntos
         System.out.println("Total de puntos: " + totalPoints);
     }
 
@@ -87,7 +87,7 @@ public class PhishingExplorer {
         return keywords;
     }
 
- private static void manejarExcepcion(String mensaje, Exception e) {
+    private static void manejarExcepcion(String mensaje, Exception e) {
         System.err.println(mensaje);
         e.printStackTrace();
     }
