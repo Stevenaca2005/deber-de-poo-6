@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class PhishingExplorer {
+
+    private static final String FILE_NAME = "messages.txt";
+
+    public static void main(String[] args) {
+        // Cargar las palabras clave y sus valores correspondientes
+        Map<String, Integer> keywords = cargarPalabrasClave();
+
+        // Inicializar el total de puntos
+        int totalPoints = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                // Convertir la línea a minúsculas para hacer la comparación sin distinción de mayúsculas
+                String lowerCaseLine = line.toLowerCase();
