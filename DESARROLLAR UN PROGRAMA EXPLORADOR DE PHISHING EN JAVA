@@ -22,3 +22,24 @@ public class PhishingExplorer {
             while ((line = reader.readLine()) != null) {
                 // Convertir la línea a minúsculas para hacer la comparación sin distinción de mayúsculas
                 String lowerCaseLine = line.toLowerCase();
+
+                for (Map.Entry<String, Integer> entry : keywords.entrySet()) {
+                    // Verificar si la línea contiene la palabra clave
+                    if (lowerCaseLine.contains(entry.getKey().toLowerCase())) {
+                        // Imprimir información sobre la ocurrencia
+                        System.out.println("Se ha encontrado '" + entry.getKey() + "' en la línea: " + line);
+                        System.out.println("\tNúmero de veces: " + contarOcurrencias(lowerCaseLine, entry.getKey().toLowerCase()));
+                        System.out.println("\tPuntuación: " + entry.getValue());
+                        System.out.println();
+
+                        // Acumular puntos
+                        totalPoints += entry.getValue();
+                    }
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            manejarExcepcion("No se pudo encontrar el archivo.", e);
+        } catch (IOException e) {
+            manejarExcepcion("Ocurrió un error leyendo el archivo.", e);
+        }
