@@ -86,3 +86,20 @@ public class PhishingExplorer {
 
         return keywords;
     }
+
+ private static void manejarExcepcion(String mensaje, Exception e) {
+        System.err.println(mensaje);
+        e.printStackTrace();
+    }
+
+    private static int contarOcurrencias(String linea, String palabra) {
+        // Contar el número de ocurrencias de la palabra en la línea
+        int contador = 0;
+        int indice = linea.indexOf(palabra);
+        while (indice != -1) {
+            contador++;
+            indice = linea.indexOf(palabra, indice + 1);
+        }
+        return contador;
+    }
+}
