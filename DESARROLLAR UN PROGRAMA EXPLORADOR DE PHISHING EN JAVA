@@ -43,3 +43,46 @@ public class PhishingExplorer {
         } catch (IOException e) {
             manejarExcepcion("Ocurrió un error leyendo el archivo.", e);
         }
+
+ // Mostrar el total de puntos
+        System.out.println("Total de puntos: " + totalPoints);
+    }
+
+    private static Map<String, Integer> cargarPalabrasClave() {
+        // Crear un mapa de palabras clave con sus valores asignados
+        Map<String, Integer> keywords = new HashMap<>();
+
+        // Agregar las palabras clave con sus valores asignados
+        keywords.put("paypal", 2);
+        keywords.put("banco", 2);
+        keywords.put("actualizar información", 3);
+        keywords.put("verificación de cuenta", 3);
+        keywords.put("contraseña expirada", 2);
+        keywords.put("ganador de lotería", 3);
+        keywords.put("herencia", 3);
+        keywords.put("oferta exclusiva", 2);
+        keywords.put("urgente", 2);
+        keywords.put("descuento especial", 2);
+        keywords.put("phishing", 3);
+        keywords.put("hacerse rico rápido", 3);
+        keywords.put("oportunidad única", 2);
+        keywords.put("trabajo desde casa", 3);
+        keywords.put("confirmar su identidad", 2);
+        keywords.put("premio garantizado", 3);
+        keywords.put("eliminar deudas", 3);
+        keywords.put("¡actúe ahora!", 2);
+        keywords.put("correo electrónico sospechoso", 2);
+        keywords.put("seguridad de la cuenta", 2);
+        keywords.put("compra ahora", 1);
+        keywords.put("gratis", 2);
+        keywords.put("¡felicidades!", 2);
+        keywords.put("revelado secreto", 3);
+        keywords.put("confidencial", 2);
+        keywords.put("sin costos ocultos", 3);
+        keywords.put("aumenta tus ingresos", 2);
+        keywords.put("doble tu dinero", 2);
+        keywords.put("100% seguro", 2);
+        keywords.put("inversiones secretas", 3);
+
+        return keywords;
+    }
